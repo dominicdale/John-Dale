@@ -20,20 +20,10 @@ $(function() {
 });
 
 
+// header shadow
 
-
-// Gallery
-/*
-$(function() {
-  $("figure").click(function(e){
-    e.stopPropagation()
-    $(".overlay").addClass("active");
-  });
-  $(".close-button").click(function(){
-    $(".overlay").removeClass("active");
-  });
-  $(document).click(function(){
-    $(".overlay").removeClass("active");
-  })
+$(function(){
+  if (document.body.scrollTop > 94) {
+    $("header").addClass("shadow");
+  }
 });
-*/

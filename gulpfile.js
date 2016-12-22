@@ -16,13 +16,13 @@ var autoprefixerOptions = {
 
 // less compiler
 gulp.task('less', function () {
-  return gulp.src('./Css/*.less')
+  return gulp.src('./css/*.less')
     .pipe(less({
       paths: [ path.join(__dirname, 'less', 'includes') ],
       compress: true
     }))
     .pipe(autoprefixer(autoprefixerOptions))
-    .pipe(gulp.dest('./Css/'))
+    .pipe(gulp.dest('./css/'))
     .pipe(browserSync.reload({
       stream: true
     }))
@@ -34,7 +34,7 @@ gulp.task('less', function () {
 // autoprefix
 
 gulp.task('autoprefix', function() {
-    gulp.src('./Css/style.css')
+    gulp.src('./css/style.css')
       .pipe(autoprefixer({
           browsers: ['Firefox < 20', 'ie 8-11', 'iOS 7', 'last 2 Chrome versions'],
           cascade: false
@@ -66,10 +66,10 @@ gulp.task('browserSync', function() {
 
 // Watch
 gulp.task('watch', ['browserSync'], function(){
-  gulp.watch('./Css/modules/*.less', ['less']);
-  gulp.watch('./Css/style.less', ['less']);
+  gulp.watch('./css/modules/*.less', ['less']);
+  gulp.watch('./css/style.less', ['less']);
   //gulp.watch('./css/style.css', ['autoprefix']);
-  gulp.watch('./Scripts/scripts.js', ['uglify']);
+  gulp.watch('./js/scripts.js', ['uglify']);
 });
 
 
