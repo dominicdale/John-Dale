@@ -1,0 +1,34 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using Archetype.Models;
+@using Archetype.Extensions;
+
+@{
+	Layout = "Master.cshtml";
+}
+
+<section class="content">
+
+<h1>@Umbraco.Field("title")</h1>
+<p>@Umbraco.Field("contentArea")</p>
+
+<div class="gallery-container row">
+	@foreach (var fieldset in Model.Content.GetPropertyValue<ArchetypeModel>("gallery"))
+	{
+			var image = Umbraco.TypedMedia(fieldset.GetValue("image"));
+			<div class="column-4 desktop-w-6">
+				<a href="@image.GetCropUrl("gallery-large")" data-lightbox="image-1" data-title="@fieldset.GetValue("popUpCaption")">
+				<figure>
+					<div class="img-container">
+						<img src="@image.GetCropUrl("gallery-small")" />
+					</div>
+					<div class="description">
+						<span class="title">@fieldset.GetValue("title")</span>
+						<span class="category">@fieldset.GetValue("category")</span>
+					</div>
+				</figure>
+				</a>
+			</div>
+	}
+</div>
+
+</section>
