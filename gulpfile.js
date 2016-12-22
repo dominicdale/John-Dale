@@ -46,20 +46,12 @@ gulp.task('autoprefix', function() {
 // uglify
 gulp.task('uglify', function () {
   gulp.src([
-    './Scripts/jquery.js',
-    //'./js/jquery-ui.min.js',
-    //'./js/jquery.timepicker.min.js',
-    './js/date.js',
-    './Scripts/jquery.validate.min.js',
-    './Scripts/jquery.validate.unobtrusive.min.js',
-    './Scripts/jquery.matchHeight.js',
-    './Scripts/scripts.js',
-    './Scripts/parallax.min.js/',
-    './js/jquery.countdown.min.js'
+    './js/scripts.js',
+    './js/lightbox.js',
   ])
   .pipe(concat('compiled.min.js'))
   .pipe(uglify())
-  .pipe(gulp.dest('./Scripts'))
+  .pipe(gulp.dest('./js'))
 });
 
 
