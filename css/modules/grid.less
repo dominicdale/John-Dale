@@ -1,0 +1,137 @@
+// main: ../style.less
+
+.row {
+  width: auto;
+  margin:0 -15px;
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+// Columns
+
+.column-1 {
+  width: (100% / 12);
+}
+.column-2 {
+  width: (100% / 12 * 2);
+}
+.column-3 {
+  width: (100% / 12 * 3);
+}
+.column-4 {
+  width: (100% / 12 * 4);
+}
+.column-5 {
+  width: (100% / 12 * 5);
+}
+.column-6 {
+  width: (100% / 12 * 6);
+}
+.column-7 {
+  width: (100% / 12 * 7);
+}
+.column-8 {
+  width: (100% / 12 * 8);
+}
+.column-9 {
+  width: (100% / 12 * 9);
+}
+.column-10 {
+  width: (100% / 12 * 10);
+}
+.column-11 {
+  width: (100% / 12 * 11);
+}
+.column-12 {
+  width: 100%;
+}
+
+// push / pull
+
+.pull-8 {
+	left: (-100% / 12 * 8);
+	@media @tablet {
+		left: 0;
+	}
+}
+.push-4 {
+	left: (100% / 12 * 4);
+	@media @tablet {
+		left: 0;
+	}
+}
+
+.pull-6 {
+	left: (-100% / 12 * 6);
+	@media @desktop {
+		left: 0;
+	}
+}
+.push-6 {
+	left: (100% / 12 * 6);
+	@media @desktop {
+		left: 0;
+	}
+}
+
+// responsive
+
+.desktop-w-6 {
+  @media @desktop-wide {
+    width: 50%;
+  }
+}
+
+.desktop-12 {
+  @media @desktop {
+    width: 100%;
+  }
+}
+
+.desktop-6 {
+  @media @desktop {
+    width: (100% / 12 * 6);
+  }
+}
+
+.desktop-4 {
+  @media @desktop {
+    width: (100% / 12 * 4);
+  }
+}
+
+.tablet-6 {
+  @media @tablet {
+    width: (100% / 12 * 6);
+  }
+}
+
+.tablet-12 {
+  @media @tablet {
+    width: 100%;
+  }
+}
+
+[class*='column-'] {
+  float: left;
+  padding: @padding;
+  position: relative;
+  min-height: 1px;
+  @media @desktop {
+    padding:0 7px;
+  }
+  @media @mobile {
+    width: 100% !important;
+  }
+}

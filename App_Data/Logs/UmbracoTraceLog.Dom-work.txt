@@ -1,0 +1,2 @@
+﻿ 2016-12-22 11:58:24,321 [P25224/D2/T44] INFO  umbraco.BusinessLogic.Log - Log scrubbed.  Removed all items older than 2016-12-21 11:58:24
+ 2016-12-22 15:58:24,339 [P25224/D2/T44] INFO  umbraco.BusinessLogic.Log - Log scrubbed.  Removed all items older than 2016-12-21 15:58:24

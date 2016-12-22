@@ -1,0 +1,141 @@
+.gallery-container {
+  margin-top: 80px;
+  max-width: 1200px;
+  figure {
+    width: 100%;
+    margin: 0;
+    box-shadow: 0px 12px 47px -9px rgba(0, 0, 0, 0.16);
+    cursor: pointer;
+    margin-bottom: 40px;
+    overflow: hidden;
+    background: #FFF;
+    position: relative;
+    .transition;
+    &:hover {
+      box-shadow: 0 40px 61px -30px rgba(0, 0, 0, .5);
+      .description {
+        transform: translateY(-40px);
+      }
+    }
+    &:before {
+      content: 'View painting';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 12px 25px;
+      font-weight: 700;
+      font-size: .7em;
+      z-index: 1;
+      background: #f7f7f7;
+    }
+    .img-container {
+      position: relative;
+      img {
+        width: 100%;
+        display: block;
+        .transition;
+      }
+    }
+    .description {
+      background: #FFF;
+      padding: 25px;
+      z-index: 2;
+      position: relative;
+      .transition;
+    }
+    span.title {
+      display: block;
+      font-size: 1em;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+    span.category {
+      display: block;
+      font-size: .8em;
+    }
+    &.active {
+      &:before {
+        transform: translateX(0);
+      }
+    }
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0,0,0,.7);
+  z-index: 20;
+  opacity: 0;
+  visibility: hidden;
+  .transition;
+  .img-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: translateY(-100%);
+    transition: all ease .5s;
+    transition-delay: .3s;
+    img {
+      width: 90%;
+      max-height: 90%;
+      object-fit: cover;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      box-shadow: 0 0 50px 0;
+    }
+  }
+  .close-button {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    cursor: pointer;
+    height:20px;
+    width: 20px;
+    z-index: 20;
+    transform: translateY(-400%);
+    .transition;
+    transition-delay: .8s;
+    .cross {
+      height: 20px;
+      width: 3px;
+      border-radius: 3px;
+      background: #FFF;
+      display: block;
+      position: absolute;
+      top:0;
+      left:8px;
+      transform: rotate(45deg);
+      &:before {
+        content: '';
+        height: 20px;
+        width: 3px;
+        border-radius: 3px;
+        background: #FFF;
+        display: block;
+        position: absolute;
+        top:0;
+        left:0;
+        transform: rotate(-90deg);
+      }
+    }
+  }
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    .img-container {
+      transform: translateY(0);
+    }
+    .close-button {
+      transform: translateY(0);
+    }
+  }
+}

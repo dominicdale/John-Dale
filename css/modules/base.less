@@ -1,0 +1,109 @@
+// main: ../style.less
+
+html,
+body {
+    height: 100%;
+    font-family: 'PT Sans', Helvetica, Arial, sans-serif;
+    color: #44454D;
+    margin: 0;
+    font-size: 1em;
+    background: #EFEFEF;
+}
+
+
+body.loading {
+  &:before {
+    content: '';
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #d2d2d2;
+    z-index: 100;
+  }
+  &:after {
+    content: '';
+    height: 100px;
+    width: 100px;
+    border: 20px solid #FFF;
+    border-right-color: transparent;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    z-index: 101;
+    border-radius: 50%;
+    animation: loading-animation linear 1s;
+    animation-iteration-count: infinite;
+    transform-origin: 50% 50%;
+  }
+}
+
+@keyframes loading-animation{
+  0% {
+    transform:  translate(-50%, -50%) rotate(0deg) ;
+  }
+  100% {
+    transform:  translate(-50%, -50%) rotate(360deg) ;
+  }
+}
+
+
+.wrapper {
+    min-height: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9;
+  background: #FFF;
+  padding: 25px;
+  text-align: center;
+  display: none;
+  @media @tablet {
+    display: block;
+  }
+}
+
+span.menu {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+}
+
+span.logo {
+  font-size: 2em;
+  border-bottom: 2px solid #eee;
+  display: inline-block;
+}
+
+main {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0 0 0 250px;
+  @media @tablet {
+    padding: 94px 0 0 0;
+  }
+  p {
+    max-width: 700px;
+    font-size: .99em;
+  }
+}
+
+img {
+  border:0;
+  outline: 0;
+}
+
+section.content {
+  padding: 50px;
+}
