@@ -8,7 +8,7 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "57e1727e0ddd8b56")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "ac9f2c74efcae3a9")]
 [assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 
@@ -42,7 +42,7 @@ namespace Umbraco.Web.PublishedContentModels
 {
 	/// <summary>Home</summary>
 	[PublishedContentModel("Home")]
-	public partial class Home : PublishedContentModel, IContent
+	public partial class Home : PublishedContentModel
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "Home";
@@ -66,6 +66,24 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Background Image
+		///</summary>
+		[ImplementPropertyType("backgroundImage")]
+		public object BackgroundImage
+		{
+			get { return this.GetPropertyValue("backgroundImage"); }
+		}
+
+		///<summary>
+		/// Content Area
+		///</summary>
+		[ImplementPropertyType("contentArea")]
+		public string ContentArea
+		{
+			get { return this.GetPropertyValue<string>("contentArea"); }
+		}
+
+		///<summary>
 		/// Site Description
 		///</summary>
 		[ImplementPropertyType("siteDescription")]
@@ -84,30 +102,12 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Content Area
-		///</summary>
-		[ImplementPropertyType("contentArea")]
-		public IHtmlString ContentArea
-		{
-			get { return Content.GetContentArea(this); }
-		}
-
-		///<summary>
-		/// Gallery
-		///</summary>
-		[ImplementPropertyType("gallery")]
-		public Archetype.Models.ArchetypeModel Gallery
-		{
-			get { return Content.GetGallery(this); }
-		}
-
-		///<summary>
 		/// Title
 		///</summary>
 		[ImplementPropertyType("title")]
 		public string Title
 		{
-			get { return Content.GetTitle(this); }
+			get { return this.GetPropertyValue<string>("title"); }
 		}
 	}
 

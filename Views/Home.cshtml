@@ -3,9 +3,12 @@
     Layout = "Master.cshtml";
 }
 
-<section class="homepage">
-  <div class="intro">
-    <span class="title">@Umbraco.Field("title")</span>
-    <span class="tagline">@Umbraco.Field("contentArea")</span>
-  </div>
-</section>
+@{
+  var image = Umbraco.Media(CurrentPage.backgroundImage);
+  <section class="homepage" style="background-image: url(@image.Url);">
+    <div class="intro">
+      <span class="title">@Umbraco.Field("title")</span>
+      <span class="tagline">@Umbraco.Field("contentArea")</span>
+    </div>
+  </section>
+}

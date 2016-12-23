@@ -67,21 +67,85 @@ header {
   padding: 25px;
   text-align: center;
   display: none;
+  .transition;
   @media @tablet {
     display: block;
+  }
+  &.shadow {
+    box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.15);
   }
 }
 
 span.menu {
   position: absolute;
-  top: 25px;
-  left: 25px;
+  top: 43px;
+  left: 50px;
+  @media @mobile-s {
+    left: 25px;
+  }
+  span.line {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #cacaca;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+    &:before, &:after {
+      content: '';
+      display: block;
+      width: 25px;
+      height: 3px;
+      background: #cacaca;
+      border-radius: 10px;
+      position: absolute;
+      cursor: pointer;
+    }
+    &:before {
+      top: -8px;
+    }
+    &:after {
+      bottom: -8px;
+    }
+  }
+  &.active {
+    @media @mobile-s {
+      left: 50px;
+    }
+    span.line {
+      background: transparent;
+      &:before {
+        transform: rotate(45deg);
+        top: 0;
+      }
+      &:after {
+        transform: rotate(-45deg);
+        bottom: 0;
+      }
+    }
+  }
 }
 
 span.logo {
   font-size: 2em;
-  border-bottom: 2px solid #eee;
   display: inline-block;
+  position: relative;
+  .transition;
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: #eee;
+  }
+  &:hover {
+    transform: translateY(-7px);
+    &:after {
+      transform: translateY(7px);
+    }
+  }
 }
 
 main {

@@ -28,9 +28,40 @@ nav {
     list-style-type: none;
     padding:0;
     margin:50px 0 0 0;
+    font-size: 1.1em;
     li {
       //font-weight: 600;
-      margin-bottom: 14px;
+      margin-bottom: 20px;
+      &:hover {
+        a {
+          &:after {
+            transform: scaleX(1);
+          }
+        }
+      }
+      &.current {
+        font-weight: 600;
+        a {
+          &:after {
+            transform: scaleX(1);
+          }
+        }
+      }
+      a {
+        position: relative;
+        &:after {
+          content: '';
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: -5px;
+          height: 3px;
+          background: #eee;
+          transform: scaleX(0);
+          transform-origin: left;
+          .transition;
+        }
+      }
     }
   }
 }

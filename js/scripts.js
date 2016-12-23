@@ -22,8 +22,12 @@ $(function() {
 
 // header shadow
 
-$(function(){
-  if (document.body.scrollTop > 94) {
+$(window).scroll(function(){
+  var scroll = $(window).scrollTop();
+
+  if (scroll >= 94) {
     $("header").addClass("shadow");
+  } else {
+    $("header").removeClass("shadow");
   }
 });
