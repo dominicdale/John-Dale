@@ -7,6 +7,7 @@ var pump = require('pump');
 var concat = require('gulp-concat');
 var browserSync = require('browser-sync').create();
 var gutil = require('gulp-util');
+var minifyCshtml = require('gulp-minify-cshtml');
 
 
 var autoprefixerOptions = {
@@ -47,11 +48,24 @@ gulp.task('autoprefix', function() {
 gulp.task('uglify', function () {
   gulp.src([
     './js/lightbox.js',
+    './js/matchHeight.js',
     './js/scripts.js'
   ])
   .pipe(concat('compiled.min.js'))
   .pipe(uglify())
   .pipe(gulp.dest('./js'))
+});
+
+
+// Minify cshtml
+gulp.task('minify-cshtml', function(){
+  gulp.src('./Views/*.cshtml)')
+    .pipe(minifyCshtml({
+      comments: true,
+      razorComments: true,
+      whitespace: true
+    }))
+    .pipe(gulp.dest('./Views/dist'));
 });
 
 
