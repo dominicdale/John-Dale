@@ -1,0 +1,107 @@
+<html lang="en">
+  <head>
+
+    <!-- Meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <!-- <meta name="description" content="@CurrentPage.siteDescription"> -->
+
+    <title>John Dale</title>
+
+	  <!-- Fonts -->
+
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet">
+
+
+    <!-- CSS -->
+    <link href="css/style.css" rel="stylesheet">
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="/favicon/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/favicon/manifest.json">
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/favicon/favicon.ico">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <header>
+      <a href="/"><span class="logo">John Dale</span></a>
+      <span class="menu">
+        <span class="line"></span>
+      </span>
+    </header>
+
+    <nav>
+      <span class="menu active">
+        <span class="line"></span>
+      </span>
+
+      <a href="/"><span class="logo">John Dale</span></a>
+
+      <ul>
+        <li><a href="#">Homepage</a></li>
+    </ul>
+    
+
+    </nav>
+
+    <main>
+        <section class="content">
+            <div class="gallery-container row">
+                <div class="column-4 desktop-w-6">
+                    <figure data-img="./img/1.jpg">
+                        <div class="img-container">
+                            <img src="./img/1.jpg" />
+                        </div>
+                        <div class="description">
+                            <span class="title">Test title</span>
+                            <span class="category">Test description</span>
+                        </div>
+                    </figure>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <section class="gallery-overlay">
+        <div class="overlay-content">
+            <img src="./img/1.jpg" />
+        </div>
+        <div class="overlay-side">
+            <span class="gallery-close"></span>                
+            <h3>Test title</h3>
+            <p>Test description</p>
+            <div class="price-container">
+                <span>500</span>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <script src="./js/compiled.min.js"></script>
+
+    <script>
+    $(function() {
+        $('.description').matchHeight({
+    			byRow: true
+    		});
+    });
+    </script>
+
+  </body>
+</html>

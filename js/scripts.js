@@ -1,12 +1,10 @@
 // Body load
-
 $(window).on("load", function() {
     $("body").removeClass("loading");
 });
 
 
 // nav
-
 $(function() {
   $(".menu").click(function(e){
     e.stopPropagation();
@@ -21,7 +19,6 @@ $(function() {
 
 
 // header shadow
-
 $(window).scroll(function(){
   var scroll = $(window).scrollTop();
 
@@ -31,3 +28,13 @@ $(window).scroll(function(){
     $("header").removeClass("shadow");
   }
 });
+
+// Gallery overlay
+$(function(){
+  $('.gallery-container figure').click(function(){
+    $('.gallery-overlay').toggleClass('open');
+  })
+  $('.gallery-close').click(function(){
+    $('.gallery-overlay').removeClass('open');
+  })
+})

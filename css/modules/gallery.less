@@ -19,7 +19,7 @@
     position: relative;
     .transition;
     &:hover {
-      box-shadow: 0 40px 61px -30px rgba(0, 0, 0, .5);
+      box-shadow: 0 40px 71px -30px rgba(0, 0, 0, 0.22);
       .description {
         transform: translateY(-40px);
       }
@@ -41,6 +41,7 @@
       img {
         width: 100%;
         display: block;
+        object-fit: cover;
         .transition;
       }
     }
@@ -100,41 +101,6 @@
       box-shadow: 0 0 50px 0;
     }
   }
-  .close-button {
-    position: absolute;
-    top: 40px;
-    right: 50px;
-    cursor: pointer;
-    height:20px;
-    width: 20px;
-    z-index: 20;
-    transform: translateY(-400%);
-    .transition;
-    transition-delay: .8s;
-    .cross {
-      height: 20px;
-      width: 3px;
-      border-radius: 3px;
-      background: #FFF;
-      display: block;
-      position: absolute;
-      top:0;
-      left:8px;
-      transform: rotate(45deg);
-      &:before {
-        content: '';
-        height: 20px;
-        width: 3px;
-        border-radius: 3px;
-        background: #FFF;
-        display: block;
-        position: absolute;
-        top:0;
-        left:0;
-        transform: rotate(-90deg);
-      }
-    }
-  }
   &.active {
     opacity: 1;
     visibility: visible;
@@ -143,6 +109,42 @@
     }
     .close-button {
       transform: translateY(0);
+    }
+  }
+}
+
+.close-button {
+  position: absolute;
+  top: 40px;
+  right: 50px;
+  cursor: pointer;
+  height:20px;
+  width: 20px;
+  z-index: 20;
+  transform: translateY(-400%);
+  .transition;
+  transition-delay: .8s;
+  .cross {
+    height: 20px;
+    width: 3px;
+    border-radius: 3px;
+    background: #FFF;
+    display: block;
+    position: absolute;
+    top:0;
+    left:8px;
+    transform: rotate(45deg);
+    &:before {
+      content: '';
+      height: 20px;
+      width: 3px;
+      border-radius: 3px;
+      background: #FFF;
+      display: block;
+      position: absolute;
+      top:0;
+      left:0;
+      transform: rotate(-90deg);
     }
   }
 }

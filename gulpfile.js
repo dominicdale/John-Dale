@@ -7,7 +7,6 @@ var pump = require('pump');
 var concat = require('gulp-concat');
 var browserSync = require('browser-sync').create();
 var gutil = require('gulp-util');
-var minifyCshtml = require('gulp-minify-cshtml');
 
 
 var autoprefixerOptions = {
@@ -17,13 +16,13 @@ var autoprefixerOptions = {
 
 // less compiler
 gulp.task('less', function () {
-  return gulp.src('./Css/*.less')
+  return gulp.src('./css/*.less')
     .pipe(less({
       paths: [ path.join(__dirname, 'less', 'includes') ],
       compress: true
     }))
     .pipe(autoprefixer(autoprefixerOptions))
-    .pipe(gulp.dest('./Css/'))
+    .pipe(gulp.dest('./css/'))
     .pipe(browserSync.reload({
       stream: true
     }))
@@ -35,18 +34,19 @@ gulp.task('less', function () {
 // autoprefix
 
 gulp.task('autoprefix', function() {
-    gulp.src('./Css/style.css')
+    gulp.src('./css/style.css')
       .pipe(autoprefixer({
           browsers: ['Firefox < 20', 'ie 8-11', 'iOS 7', 'last 2 Chrome versions'],
           cascade: false
       }))
-      .pipe(gulp.dest('./Css/'))
+      .pipe(gulp.dest('./css/'))
 });
 
 
-// uglify
+uglify
 gulp.task('uglify', function () {
   gulp.src([
+    './js/jquery.js',
     './js/lightbox.js',
     './js/matchHeight.js',
     './js/scripts.js'
@@ -57,35 +57,23 @@ gulp.task('uglify', function () {
 });
 
 
-// Minify cshtml
-gulp.task('minify-cshtml', function(){
-  gulp.src('./Views/*.cshtml)')
-    .pipe(minifyCshtml({
-      comments: true,
-      razorComments: true,
-      whitespace: true
-    }))
-    .pipe(gulp.dest('./Views/dist'));
-});
-
-
 // browser reload
 
 gulp.task('browserSync', function() {
   browserSync.init({
-      proxy: 'johndale.local'
+      proxy: 'http://localhost:8888/John-Dale/'
   })
 })
 
 
 // Watch
 gulp.task('watch', ['browserSync'], function(){
-  gulp.watch('./Css/modules/*.less', ['less']);
-  gulp.watch('./Css/style.less', ['less']);
+  gulp.watch('./css/modules/*.less', ['less']);
+  gulp.watch('./css/style.less', ['less']);
   //gulp.watch('./css/style.css', ['autoprefix']);
-  gulp.watch('./Scripts/scripts.js', ['uglify']);
+  // gulp.watch('./Scripts/scripts.js', ['uglify']);
 });
 
 
 // Default task
-gulp.task('default', ['less', 'uglify']);
+gulp.task('default', ['less', 'uglify', 'watch']);
