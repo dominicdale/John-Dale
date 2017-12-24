@@ -4,7 +4,7 @@
     <!-- Meta tags -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- <meta name="description" content="@CurrentPage.siteDescription"> -->
 
     <title>John Dale</title>
@@ -63,9 +63,9 @@
         <section class="content">
             <div class="gallery-container row">
                 <div class="column-4 desktop-w-6">
-                    <figure data-img="./img/1.jpg">
+                    <figure data-img="test.html">
                         <div class="img-container">
-                            <img src="./img/1.jpg" />
+                            <img src="./img/painting3.jpg" />
                         </div>
                         <div class="description">
                             <span class="title">Test title</span>
@@ -79,7 +79,7 @@
 
     <section class="gallery-overlay">
         <div class="overlay-content">
-            <img src="./img/1.jpg" />
+            <img id="test"/>
         </div>
         <div class="overlay-side">
             <span class="gallery-close"></span>                
@@ -88,20 +88,23 @@
             <div class="price-container">
                 <span>500</span>
             </div>
+            <a href="#" class="button">Contact about purchasing</a>
         </div>
+        <div class="overlay-loading"></div>
     </section>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
 
     <script src="./js/compiled.min.js"></script>
 
-    <script>
+    <!-- <script>
     $(function() {
         $('.description').matchHeight({
     			byRow: true
     		});
     });
-    </script>
+    </script> -->
+
 
   </body>
 </html>

@@ -47,8 +47,9 @@ uglify
 gulp.task('uglify', function () {
   gulp.src([
     './js/jquery.js',
-    './js/lightbox.js',
-    './js/matchHeight.js',
+    // './js/lightbox.js',
+    // './js/matchHeight.js',
+    // './js/adaptiveBg.js',
     './js/scripts.js'
   ])
   .pipe(concat('compiled.min.js'))
@@ -71,7 +72,7 @@ gulp.task('watch', ['browserSync'], function(){
   gulp.watch('./css/modules/*.less', ['less']);
   gulp.watch('./css/style.less', ['less']);
   //gulp.watch('./css/style.css', ['autoprefix']);
-  // gulp.watch('./Scripts/scripts.js', ['uglify']);
+  gulp.watch('./Scripts/scripts.js', ['uglify']);
 });
 
 
