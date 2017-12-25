@@ -46,7 +46,7 @@ gulp.task('autoprefix', function() {
 uglify
 gulp.task('uglify', function () {
   gulp.src([
-    './js/jquery.js',
+    // './js/jquery.js',
     // './js/lightbox.js',
     // './js/matchHeight.js',
     // './js/adaptiveBg.js',
