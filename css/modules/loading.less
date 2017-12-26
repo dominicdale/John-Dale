@@ -13,9 +13,13 @@
   animation-iteration-count: infinite;
   opacity: 0;
   transition-delay: 0s;
+  z-index: 9;
   &.active {
     opacity: 1;
     transition-delay: .7s;
+  }
+  @media @desktop {
+    left: 50%;
   }
 }
 

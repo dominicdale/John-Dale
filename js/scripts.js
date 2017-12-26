@@ -1,6 +1,3 @@
-overlayContent = $('.gallery-overlay .overlay-content');
-overlayLoading = $('.gallery-overlay .overlay-loading');
-
 // Body load
 $(window).on("load", function () {
 	$("body").removeClass("loading");
@@ -34,12 +31,27 @@ $(window).scroll(function () {
 
 // Gallery overlay
 $(function () {
+
+
 	$('.gallery-container figure').click(function () {
-		var url = $(this).data("img");
+
+		url = $(this).data("img");
+		overlayContent = $('.gallery-overlay .overlay-content');
+		overlayLoading = $('.gallery-overlay .overlay-loading');
+		title = $(this).data("title");
+		description = $(this).data("description");
+		price = $(this).data("price");
+		size = $(this).data("size");
+
 
 		$('.gallery-overlay').toggleClass('open');
 		$('body').toggleClass('no-scroll');
 		overlayLoading.toggleClass('active');
+
+		$('.overlay-side #title').text(title);
+		$('.overlay-side #description').text(description);
+		$('.overlay-side #price').text(price);
+		$('.overlay-side #size').text(size);
 
 		if (url) {
 			var img = $('<img />').appendTo(overlayContent).hide();
