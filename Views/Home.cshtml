@@ -5,7 +5,8 @@
 
 @{
   var image = Umbraco.Media(CurrentPage.backgroundImage);
-  <section class="homepage" style="background-image: url(@image.GetCropUrl("home-bg"));">
+  <section class="homepage">
+    <div class="homepage-bg" style="background-image: url(@image.GetCropUrl("home-bg"));"></div>
     <div class="intro">
       <h1 class="title">@Umbraco.Field("title")</h1>
       <span class="tagline">@Umbraco.Field("contentArea")</span>
