@@ -7,6 +7,7 @@ var pump = require('pump');
 var concat = require('gulp-concat');
 var browserSync = require('browser-sync').create();
 var gutil = require('gulp-util');
+var sourcemaps = require('gulp-sourcemaps');
 
 
 var autoprefixerOptions = {
@@ -16,34 +17,22 @@ var autoprefixerOptions = {
 
 // less compiler
 gulp.task('less', function () {
-  return gulp.src('./css/*.less')
-    .pipe(less({
-      paths: [ path.join(__dirname, 'less', 'includes') ],
-      compress: true
-    }))
-    .pipe(autoprefixer(autoprefixerOptions))
-    .pipe(gulp.dest('./css/'))
-    .pipe(browserSync.reload({
-      stream: true
-    }))
-    .pipe(less().on('error', gutil.log))
+  return gulp.src('./css/style.less')
+  .pipe(sourcemaps.init())
+  .pipe(less({compress: true}).on('error', function(err){
+    gutil.log(err);
+    this.emit('end');
+  }))
+  .pipe(autoprefixer(autoprefixerOptions))  
+  .pipe(sourcemaps.write('./sourcemaps')) 
+  .pipe(gulp.dest('./css/'))
+  .pipe(browserSync.reload({
+    stream: true
+  }))
 });
 
 
-
-// autoprefix
-
-gulp.task('autoprefix', function() {
-    gulp.src('./css/style.css')
-      .pipe(autoprefixer({
-          browsers: ['Firefox < 20', 'ie 8-11', 'iOS 7', 'last 2 Chrome versions'],
-          cascade: false
-      }))
-      .pipe(gulp.dest('./css/'))
-});
-
-
-uglify
+// uglify
 gulp.task('uglify', function () {
   gulp.src([
     './js/jquery.js',
@@ -60,7 +49,8 @@ gulp.task('uglify', function () {
 
 gulp.task('browserSync', function() {
   browserSync.init({
-      proxy: 'http://localhost:8888/John-Dale/'
+      // proxy: 'http://localhost:8888/John-Dale/'
+      proxy: 'http://johndale.local'
   })
 })
 

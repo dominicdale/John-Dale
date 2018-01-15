@@ -1,5 +1,5 @@
 Failed to build PureLive models.
-c:\WWWRoot\JohnDale\App_Data\Models\all.generated.cs(221): error CS1061: 'Umbraco.Core.Models.IPublishedContent' does not contain a definition for 'GetContentArea' and no extension method 'GetContentArea' accepting a first argument of type 'Umbraco.Core.Models.IPublishedContent' could be found (are you missing a using directive or an assembly reference?)
+c:\WWWRoot\John-Dale\App_Data\Models\all.generated.cs(221): error CS1061: 'Umbraco.Core.Models.IPublishedContent' does not contain a definition for 'GetContentArea' and no extension method 'GetContentArea' accepting a first argument of type 'Umbraco.Core.Models.IPublishedContent' could be found (are you missing a using directive or an assembly reference?)
 
    at System.Web.Compilation.AssemblyBuilder.Compile()
    at System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
