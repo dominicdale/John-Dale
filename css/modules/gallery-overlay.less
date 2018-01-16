@@ -1,155 +1,167 @@
 section.gallery-overlay {
-    position: fixed;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    font-size: 25px;
-    z-index: 100;
-    pointer-events: none;
-    visibility: hidden;
-    background-color: rgb(33, 33, 33);
-    transition: all .8s cubic-bezier(0, 0, 0, 1);
-    transform: translateX(100%);
-    @media @desktop {
-        overflow-y: auto;
-    }
-    &.open {
-        pointer-events: all;
-        visibility: visible;
-        transform: translateX(0);
-        .overlay-content, .overlay-side {
-            transform: translateX(0);
-        }
-        .overlay-side {
-            transition-delay: .5s;
-        }
-    }
-    .gallery-close {
-        width: 20px;
-        height: 20px;
-        display: block;
-        position: absolute;
-        top: 30px;
-        right: 30px;
-        z-index: 10;
-        cursor: pointer;
-        @media @tablet {
-            top: 15px;
-            right: 15px;
-        }
-        &:before, &:after {
-            content: '';
-            position: absolute;
-            top: 8px;
-            width: 20px;
-            height: 3px;
-            background-color: #cacaca;
-            border-radius: 5px;
-            @media @desktop {
-                background-color: #FFF;
-            }
-        }
-        &:before {
-            transform: rotate(45deg);
-        }
-        &:after {
-            transform: rotate(-45deg);
-        }
-    }
-    .overlay-content {
-        background-color: rgb(33, 33, 33);
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        padding-right: 25%;       
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition-delay: .5s;
-        @media @desktop {
-            position: relative;
-            width: 100%;
-            padding: 0;
-        }
-        &.active {
-            img {
-            opacity: 1;
-            // transition-delay: .5s;
-            }
-          }
-        img {
-            width: 80%;
-            margin: 50px;
-            opacity: 0;
-            z-index: 10;
-            .transition;    
-        }    
-    }
-    .overlay-side {
-        background-color: #FFF;
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        width: 25%;
-        transform: translateX(100%);
-        transition: all .6s cubic-bezier(0, 0, 0, 0.98);
-        transition-delay: 0s;
-        padding: 50px;
-        @media @desktop {
-            position: relative;
-            width: 100%;
-        }
-        
-        h3 {
-            margin-bottom: 10px;
-        }
-        p {
-            font-size: .6em;
-            &#size {
-                border-top: 2px solid #efefef;
-                padding-top: 15px;
-            }
-        }
-        .price-container {
-            padding: 25px 0;
-            border-top: 2px solid #efefef;
-            margin-bottom: 30px;
-            font-size: 1.5em;
-            span {
-                &:before {
-                    content: '£';
-                    vertical-align: super;
-                    font-size: 0.5em;
-                    margin-right: 3px;
-                }
-            }
-        }
-        a.button {
-            display: block;
-            padding: 30px;
-            background-color: #ececec;
-            // text-transform: uppercase;
-            font-size: .7em;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            font-weight: 600;
-            right: 0;
-            text-align: center;
-            .transition;
-            @media @desktop {
-                position: relative;
-            }
-            &:hover {
-                color: #FFF;
-                background-color: rgb(65, 65, 65);
-            }
-        }
-    }
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	font-size: 25px;
+	z-index: 100;
+	pointer-events: none;
+	visibility: hidden;
+	background-color: rgb(33, 33, 33);
+	transition: all .8s cubic-bezier(0, 0, 0, 1);
+	transform: translateX(100%);
+	@media @desktop {
+		overflow-y: auto;
+	}
+	&.open {
+		pointer-events: all;
+		visibility: visible;
+		transform: translateX(0);
+		.overlay-content,
+		.overlay-side {
+			transform: translateX(0);
+		}
+		.overlay-side {
+			transition-delay: .5s;
+		}
+	}
+	.gallery-close {
+		width: 20px;
+		height: 20px;
+		display: block;
+		position: absolute;
+		top: 30px;
+		right: 30px;
+		z-index: 10;
+		cursor: pointer;
+		@media @tablet {
+			top: 15px;
+			right: 15px;
+		}
+		&:before,
+		&:after {
+			content: '';
+			position: absolute;
+			top: 8px;
+			width: 20px;
+			height: 3px;
+			background-color: #cacaca;
+			border-radius: 5px;
+			@media @desktop {
+				background-color: #FFF;
+			}
+		}
+		&:before {
+			transform: rotate(45deg);
+		}
+		&:after {
+			transform: rotate(-45deg);
+		}
+	}
+	.overlay-content {
+		background-color: rgb(33, 33, 33);
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		padding-right: 25%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition-delay: .5s;
+		@media @desktop {
+			position: relative;
+			width: 100%;
+			padding: 0;
+			min-height: 300px;
+		}
+		&.active {
+			img {
+				opacity: 1; // transition-delay: .5s;
+			}
+		}
+		img {
+			width: 80%;
+			margin: 50px;
+			opacity: 0;
+			z-index: 10;
+			.transition;
+		}
+	}
+	.overlay-side {
+		background-color: #FFF;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		width: 25%;
+		transform: translateX(100%);
+		transition: all .6s cubic-bezier(0, 0, 0, 0.98);
+		transition-delay: 0s;
+		padding: 50px;
+		@media @desktop {
+			position: relative;
+			width: 100%;
+			transform: translateX(0);
+			transition: none;
+		}
+		.side-scroll {
+			overflow-y: auto;
+			max-height: ~"calc(100vh - 133px)";
+		}
+		h3 {
+			margin-bottom: 10px;
+		}
+		p {
+			font-size: .6em;
+			&#size {
+				border-top: 2px solid #efefef;
+				padding-top: 15px;
+				&:empty {
+					border: 0;
+					padding: 0;
+				}
+			}
+		}
+		.price-container {
+			padding: 25px 0;
+			border-top: 2px solid #efefef;
+			margin-bottom: 30px;
+			font-size: 1.5em;
+			display: none;
+			span {
+				&:before {
+					content: '£';
+					vertical-align: super;
+					font-size: 0.5em;
+					margin-right: 3px;
+				}
+			}
+		}
+		a.button {
+			display: block;
+			padding: 30px;
+			background-color: #ececec; // text-transform: uppercase;
+			font-size: .7em;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			font-weight: 600;
+			right: 0;
+			text-align: center;
+			.transition;
+			@media @desktop {
+				position: relative;
+			}
+			&:hover {
+				color: #FFF;
+				background-color: rgb(65, 65, 65);
+			}
+		}
+		
+	}
 }

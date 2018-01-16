@@ -59,8 +59,7 @@ gulp.task('browserSync', function() {
 gulp.task('watch', ['browserSync'], function(){
   gulp.watch('./css/modules/*.less', ['less']);
   gulp.watch('./css/style.less', ['less']);
-  //gulp.watch('./css/style.css', ['autoprefix']);
-  gulp.watch('./Scripts/scripts.js', ['uglify']);
+  gulp.watch('./js/scripts.js', ['uglify']);
 });
 
 

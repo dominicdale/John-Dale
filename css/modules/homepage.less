@@ -11,16 +11,20 @@ section.homepage {
     bottom:30px;
     right:70px;
     text-align: left;
+    transform: translateY(30px);
+    opacity: 0;
+    transition: all .6s cubic-bezier(0, 0, 0, 0.98);
+    transition-delay: .5s;
     @media @mobile {
       right: 30px;
       bottom: 10px;
     }
     h1.title {
-      font-size: 6em;
+      font-size: 5em;
       font-weight: 800;
       letter-spacing: -0.02em;
-      line-height: 1.15em;
       display: block;
+      line-height: 1em;
       margin: 0;
       @media @mobile {
         font-size: 4em;
@@ -28,7 +32,7 @@ section.homepage {
       }
     }
     span.tagline {
-      font-size: 1.5em;
+      font-size: 1.3em;
       display: block;
     }
   }

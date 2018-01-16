@@ -8,21 +8,30 @@
 
 <section class="content">
 
+@*
 @if (CurrentPage.HasValue("title")){
 	<h1>@Umbraco.Field("title")</h1>
 }
 @if (CurrentPage.HasValue("contentArea")){
 	<div class="top-content">@Umbraco.Field("contentArea")</div>
 }
+*@
 
 
 <div class="gallery-container row">
-	@foreach (var fieldset in Model.Content.GetPropertyValue<ArchetypeModel>("gallery"))
-	{
+	@{
+		int counter = 1;
+
+		foreach (var fieldset in Model.Content.GetPropertyValue<ArchetypeModel>("gallery"))
+		{
 			var image = Umbraco.TypedMedia(fieldset.GetValue("image"));
 			<div class="column-4 desktop-w-6">
-				<a href="@image.GetCropUrl(900)" data-lightbox="image-1" data-title="@fieldset.GetValue("popUpCaption")">
-				<figure>
+				<figure data-img="@image.GetCropUrl(900)" 
+							data-title="@fieldset.GetValue("title")" 
+							data-description="@fieldset.GetValue("description")" 
+							data-price="@fieldset.GetValue("price")"
+							data-size="@fieldset.GetValue("size")"
+							data-animation="@(++counter)">
 					<div class="img-container">
 						<img src="@image.GetCropUrl("gallery-small")" />
 					</div>
@@ -31,8 +40,8 @@
 						<span class="category">@fieldset.GetValue("category")</span>
 					</div>
 				</figure>
-				</a>
 			</div>
+		}
 	}
 </div>
 
@@ -45,14 +54,16 @@
 				<div class="overlay-loading"></div>
 	</div>
 	<div class="overlay-side">
-		<h3 id="title"></h3>
-		<p id="description"></p>
-		<p id="size"></p>
-		<div class="price-container">
-				<span id="price"></span>
+		<div class="side-scroll">
+			<h3 id="title"></h3>
+			<p id="description"></p>
+			<p id="size"></p>
+			<div class="price-container">
+					<span id="price"></span>
+			</div>
 		</div>
 		
-		<a href="#" class="button">Contact about purchasing</a>
+		<a href="#" class="button" id="contactButton">Contact about purchasing</a>
 	</div>
 	
 </section>
