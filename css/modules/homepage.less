@@ -1,5 +1,5 @@
 section.homepage {
-  background-color: #28292B;
+  background-color: #EFEFEF;
   background-repeat: no-repeat;
   background-size: cover;
   color: #FFF;
@@ -14,7 +14,7 @@ section.homepage {
     transform: translateY(30px);
     opacity: 0;
     transition: all .6s cubic-bezier(0, 0, 0, 0.98);
-    transition-delay: .5s;
+    transition-delay: .7s;
     @media @mobile {
       right: 30px;
       bottom: 10px;
@@ -44,9 +44,10 @@ section.homepage {
     left: 0;
     height: 100%;
     width: 100%;
-    // object-fit: cover;
     background-size: cover;
     background-repeat: no-repeat;
     transform: scale(1.3);
+    transition: all 1s ease;
+    opacity: 0;
   }
 }

@@ -20,18 +20,15 @@
 
 <div class="gallery-container row">
 	@{
-		int counter = 1;
-
 		foreach (var fieldset in Model.Content.GetPropertyValue<ArchetypeModel>("gallery"))
 		{
 			var image = Umbraco.TypedMedia(fieldset.GetValue("image"));
-			<div class="column-4 desktop-w-6">
+			@*<div class="column-4 desktop-w-6">*@
 				<figure data-img="@image.GetCropUrl(900)" 
 							data-title="@fieldset.GetValue("title")" 
 							data-description="@fieldset.GetValue("description")" 
 							data-price="@fieldset.GetValue("price")"
-							data-size="@fieldset.GetValue("size")"
-							data-animation="@(++counter)">
+							data-size="@fieldset.GetValue("size")">
 					<div class="img-container">
 						<img src="@image.GetCropUrl("gallery-small")" />
 					</div>
@@ -40,7 +37,7 @@
 						<span class="category">@fieldset.GetValue("category")</span>
 					</div>
 				</figure>
-			</div>
+			@*</div>*@
 		}
 	}
 </div>

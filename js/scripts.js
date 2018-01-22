@@ -1,6 +1,8 @@
 // Body load
 $(window).on("load", function () {
-	$("body").removeClass("loading");
+	setTimeout(function () {
+		$("body").removeClass("loading");
+	}, 1000)
 });
 
 
@@ -28,6 +30,7 @@ $(window).scroll(function () {
 		$("header").removeClass("shadow");
 	}
 });
+
 
 // Gallery overlay
 $(function () {
@@ -87,10 +90,9 @@ $(function () {
 })
 
 
-
 // Homepage image move
 $(document).ready(function () {
-	var movementStrength = 25;
+	var movementStrength = 50;
 	var height = movementStrength / $(window).height();
 	var width = movementStrength / $(window).width();
 	$(".homepage-bg").mousemove(function (e) {
