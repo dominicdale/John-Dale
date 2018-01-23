@@ -15,6 +15,7 @@ section.gallery-overlay {
 	transform: translateX(100%);
 	@media @desktop {
 		overflow-y: auto;
+		background-color: #FFF;
 	}
 	&.open {
 		pointer-events: all;
@@ -73,11 +74,13 @@ section.gallery-overlay {
 		align-items: center;
 		justify-content: center;
 		transition-delay: .5s;
+		transition: all ease 1s;
 		@media @desktop {
 			position: relative;
 			width: 100%;
 			padding: 0;
 			min-height: 300px;
+			transition-delay: 0s;
 		}
 		&.active {
 			img {

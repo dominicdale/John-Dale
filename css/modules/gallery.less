@@ -12,16 +12,21 @@
   flex-wrap: wrap;
   justify-content: space-between;
   figure {
-    width: 31%;
-    margin: 0;
+    width: ~"calc(33.33333% - 40px)";
+    margin: 0 20px 40px;
     box-shadow: 0px 12px 47px -9px rgba(0, 0, 0, 0.16);
     cursor: pointer;
-    margin-bottom: 40px;
     overflow: hidden;
     background: #FFF;
     position: relative;
     transition: all ease .5s;
     opacity: 0;
+    @media @desktop {
+      width: ~"calc(50% - 40px)";
+    }
+    @media @mobile {
+      width: 100%;
+    }
     &:hover {
       box-shadow: 0 40px 71px -30px rgba(0, 0, 0, 0.22);
       .description {

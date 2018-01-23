@@ -60,6 +60,9 @@ $(function () {
 		if (url) {
 			img.attr("src", url);
 			img.on('load', function () {
+				overlayContent.animate({
+					height: "(img.height()+100)"
+				});
 				img.show(function () {
 					setTimeout(function () {
 						overlayLoading.removeClass('active');
@@ -80,6 +83,7 @@ $(function () {
 		$('#contactButton').attr("href", "mailto:daletess@aol.com?subject=I'd like to purchase " + title)
 	})
 
+	// Hide gallery and remove fields
 	$('.gallery-close').click(function () {
 		$('.gallery-overlay').removeClass('open');
 		$('body').removeClass('no-scroll');

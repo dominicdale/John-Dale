@@ -54,13 +54,13 @@ body {
   &:not(.loading) {
     nav {
       transform: translateX(0);
+      @media @tablet {
+        transform: translateX(-120%);
+      }
     }
     section.homepage {
       .intro {
         transform: translateY(0);
-        opacity: 1;
-      }
-      .homepage-bg {
         opacity: 1;
       }
     }
@@ -191,8 +191,8 @@ img {
 
 section.content {
   padding: 50px;
-  padding: 50px 50px 50px 300px;
+  padding: 50px 30px 50px 300px;
   @media @tablet {
-    padding: 144px 50px 50px 50px;
+    padding: 144px 30px 50px 30px;
   }
 }
