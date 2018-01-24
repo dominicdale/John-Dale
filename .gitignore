@@ -1,3 +1,6 @@
 /node_modules
 /Media
 /App_Data
+/Umbraco
+/Umbraco_Client
+/bin
