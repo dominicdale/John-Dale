@@ -104,6 +104,6 @@ $(document).ready(function () {
 		var pageY = e.pageY - ($(window).height() / 2);
 		var newvalueX = width * pageX * -1 - 25;
 		var newvalueY = height * pageY * -1 - 50;
-		$('.homepage-bg').css("background-position", newvalueX + "px     " + newvalueY + "px");
+		$('.homepage-bg').css('transform', 'translate('+ newvalueX + 'px' + ',' + newvalueY + 'px) scale(1.3)');
 	});
 });
