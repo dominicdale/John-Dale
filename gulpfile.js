@@ -36,7 +36,7 @@ gulp.task('less', function () {
 gulp.task('uglify', function () {
   gulp.src([
     './js/jquery.js',
-    './js/matchHeight.js',
+    // './js/matchHeight.js',
     './js/scripts.js'
   ])
   .pipe(concat('compiled.min.js'))

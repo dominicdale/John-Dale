@@ -77,6 +77,7 @@ $(function () {
 			$('.price-container').show();
 		} else {
 			$('.price-container').hide();
+			$('#contactButton').hide();
 		}
 
 		// Update contact button email address and subject
